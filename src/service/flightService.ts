@@ -61,9 +61,9 @@ class FlightService {
                 to: true
             },
             order: {
-                id: "ASC",
+                start: "ASC",
                 rows: {
-                    price : "ASC",
+                    price : "ASC"
                 }
             },
             // skip: queries.skip? queries.skip : 0,
@@ -99,7 +99,10 @@ class FlightService {
     }
 
     save = async (flight) => {
-        return await this.flightRepository.save(flight);
+
+        return await this.flightRepository.save(
+            flight
+        );
     }
 
     update = async (id, flight) => {
